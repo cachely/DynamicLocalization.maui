@@ -1,4 +1,5 @@
 ﻿using DynamicLocalization.Messages;
+using Prism.AppModel;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -6,7 +7,7 @@ using Xamarin.Forms;
 
 namespace DynamicLocalization.ViewModels
 {
-    internal class ViewModelBase : BindableBase, INavigationAware
+    internal class ViewModelBase : BindableBase, INavigationAware, IPageLifecycleAware
     {
         public ViewModelBase(INavigationService navigationService) 
         {
@@ -15,15 +16,24 @@ namespace DynamicLocalization.ViewModels
 
         public INavigationService NavigationService { get; set; }
 
-        public virtual void OnNavigatedFrom(INavigationParameters parameters)
+        public void OnAppearing()
+        {
+            MessagingCenter.Subscribe<object>(Application.Current, CultureChangedMessage.Message, (s) => { UpdateLocalizedItems(); });
+        }
+
+        public void OnDisappearing()
         {
             MessagingCenter.Unsubscribe<object>(Application.Current, CultureChangedMessage.Message);
         }
 
+        public virtual void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            
+        }
+
         public virtual void OnNavigatedTo(INavigationParameters parameters)
         {
-            UpdateLocalizedItems();
-            MessagingCenter.Subscribe<object>(Application.Current, CultureChangedMessage.Message, (s) => { UpdateLocalizedItems(); });
+            UpdateLocalizedItems();            
         }
 
         protected virtual void UpdateLocalizedItems()

@@ -1,10 +1,9 @@
 ﻿using DynamicLocalization.ViewModels;
 using DynamicLocalization.Views;
-using Prism.Ioc;
 
 namespace DynamicLocalization
 {
-    public partial class App 
+    public partial class App : Application
     {
         public App()
         {   
