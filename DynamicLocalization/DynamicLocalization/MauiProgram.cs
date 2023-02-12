@@ -1,4 +1,6 @@
-﻿using Prism.Commands;
+﻿using DynamicLocalization.ViewModels;
+using DynamicLocalization.Views;
+using Prism.Commands;
 
 namespace DynamicLocalization
 {
@@ -9,7 +11,12 @@ namespace DynamicLocalization
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                .UsePrism(prism => { })
+                .UsePrism(prism => {
+                    prism.RegisterTypes(containerRegistry =>
+                    {
+                        containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+                        containerRegistry.RegisterForNavigation<AnotherPage, AnotherPageViewModel>();
+                    });})
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
