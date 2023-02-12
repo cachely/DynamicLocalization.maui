@@ -1,9 +1,4 @@
 ﻿using DynamicLocalization.Messages;
-using Prism.AppModel;
-using Prism.Mvvm;
-using Prism.Navigation;
-using System;
-using Xamarin.Forms;
 
 namespace DynamicLocalization.ViewModels
 {

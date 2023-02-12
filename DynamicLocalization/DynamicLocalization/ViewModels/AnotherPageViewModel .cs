@@ -1,6 +1,5 @@
 ﻿using DynamicLocalization.Utilities;
 using Prism.Navigation;
-using Xamarin.Forms;
 
 namespace DynamicLocalization.ViewModels
 {

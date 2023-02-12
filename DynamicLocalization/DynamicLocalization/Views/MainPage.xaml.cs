@@ -1,6 +1,4 @@
-﻿using Xamarin.Forms;
-
-namespace DynamicLocalization.Views
+﻿namespace DynamicLocalization.Views
 {
     public partial class MainPage : ContentPage
     {

@@ -1,6 +1,4 @@
 ﻿using DynamicLocalization.Utilities;
-using Prism.Navigation;
-using Xamarin.Forms;
 
 namespace DynamicLocalization.ViewModels
 {
@@ -44,7 +42,7 @@ namespace DynamicLocalization.ViewModels
         {
             get
             {
-                return new Command(() => NavigationService.NavigateAsync("AnotherPage", useModalNavigation: true));
+                return new Command(() => NavigationService.NavigateAsync("AnotherPage"));
             }
         }
 
