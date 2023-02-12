@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFrameworks>net7.0-android33.0;net7.0-ios15.4</TargetFrameworks>
+	  <TargetFrameworks>net6.0-android31.0;net6.0-ios15.4</TargetFrameworks>
 	  <UseMaui>True</UseMaui>
 	  <OutputType>Library</OutputType>
     <OutputType>Library</OutputType>
@@ -32,26 +32,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\en.Designer.cs">
+    <Compile Update="Resources\AppResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>en.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Resources\es.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>es.resx</DependentUpon>
+      <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\en.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>en.Designer.cs</LastGenOutput>
+    <EmbeddedResource Update="Resources\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>es.Designer.cs</LastGenOutput>
+    <EmbeddedResource Update="Resources\AppResources.en-US.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\AppResources.es-MX.resx">
+      <Generator></Generator>
     </EmbeddedResource>
   </ItemGroup>
 

@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<UseMaui>true</UseMaui>
-		<TargetFramework>net7.0-ios</TargetFramework>
+		<TargetFramework>net6.0-ios</TargetFramework>
 		<OutputType>Exe</OutputType>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,14 +21,14 @@
 		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
 		<Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
 		<OutputType>Exe</OutputType>
-		<RootNamespace>ArtAuction.iOS</RootNamespace>
+		<RootNamespace>DynamicLocalization.iOS</RootNamespace>
 		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-		<AssemblyName>ArtAuction.iOS</AssemblyName>
+		<AssemblyName>DynamicLocalization.iOS</AssemblyName>
 		<MtouchEnableSGenConc>true</MtouchEnableSGenConc>
 		<MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
 		<ProvisioningType>automatic</ProvisioningType>
 		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
-		<TargetFrameworks>net7.0-ios</TargetFrameworks>
+		<TargetFrameworks>net6.0-ios15.4</TargetFrameworks>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
