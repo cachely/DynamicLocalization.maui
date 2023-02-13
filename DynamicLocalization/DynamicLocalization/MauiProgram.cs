@@ -1,5 +1,7 @@
 ﻿using DynamicLocalization.ViewModels;
 using DynamicLocalization.Views;
+using Prism;
+using Prism.Navigation;
 
 namespace DynamicLocalization
 {
@@ -12,19 +14,15 @@ namespace DynamicLocalization
                 
                 //prism lifecycle methods are invoked here. I.E. OnInit, OnStart
                .UsePrism(prism => {
-                    prism.RegisterTypes(containerRegistry =>
+                    prism.RegisterTypes(container =>
                     {
-                        containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-                        containerRegistry.RegisterForNavigation<AnotherPage, AnotherPageViewModel>();
+                        container.RegisterForNavigation<MainPage, MainPageViewModel>();
+                        container.RegisterForNavigation<AnotherPage, AnotherPageViewModel>();
                     });
 
-                   prism.OnAppStart(async navigationService =>
+                   prism.OnAppStart(navigationService =>
                    {
-                       var result = await navigationService.NavigateAsync("MainPage");
-                       if (!result.Success)
-                       {
-                           System.Diagnostics.Debugger.Break();
-                       }
+                       navigationService.CreateBuilder().AddSegment<MainPageViewModel>().Navigate(HandleNavigationError);                      
                    });
                })
 
@@ -35,6 +33,12 @@ namespace DynamicLocalization
 
 
             return builder.Build();
+        }
+
+        private static void HandleNavigationError(Exception ex)
+        {
+            Console.WriteLine(ex);
+            System.Diagnostics.Debugger.Break();
         }
     }
 }
