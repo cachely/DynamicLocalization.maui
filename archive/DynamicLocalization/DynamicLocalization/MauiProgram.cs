@@ -1,7 +1,5 @@
 ﻿using DynamicLocalization.ViewModels;
 using DynamicLocalization.Views;
-using Prism;
-using Prism.Navigation;
 
 namespace DynamicLocalization
 {
