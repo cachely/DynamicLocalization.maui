@@ -1,15 +1,15 @@
-﻿using DynamicLocalization.Messages;
+﻿using DynamicLocalization.Messaging;
 
 namespace DynamicLocalization.ViewModels
 {
-    internal class ViewModelBase : BindableBase, INavigationAware, IPageLifecycleAware
+    internal class ViewModelBase  : BindableBase, INavigationAware, IPageLifecycleAware
     {
-        public ViewModelBase(INavigationService navigationService) 
+        public ViewModelBase(INavigationService navigationService)
         {
             NavigationService = navigationService;
         }
 
-        public INavigationService NavigationService { get; set; }
+        public INavigationService NavigationService { get; private set; }
 
         public void OnAppearing()
         {
