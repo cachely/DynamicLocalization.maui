@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<UseMaui>true</UseMaui>
-		<TargetFramework>net6.0-ios</TargetFramework>
+		<TargetFramework>net7.0-ios</TargetFramework>
 		<OutputType>Exe</OutputType>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">16.1</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -12,6 +12,10 @@
 			<Project>{3a3fdc90-3581-4258-ae40-4e802600922d}</Project>
 			<Name>DynamicLocalization</Name>
 		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
 	</ItemGroup>
 	<PropertyGroup>
 		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
@@ -28,7 +32,7 @@
 		<MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
 		<ProvisioningType>automatic</ProvisioningType>
 		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
-		<TargetFrameworks>net6.0-ios15.4</TargetFrameworks>
+		<TargetFrameworks>net7.0-ios16.1</TargetFrameworks>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
