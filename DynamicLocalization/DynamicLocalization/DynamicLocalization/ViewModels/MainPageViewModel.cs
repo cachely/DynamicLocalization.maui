@@ -1,6 +1,7 @@
 ﻿using DynamicLocalization.Utilities;
 using Prism.Navigation;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace DynamicLocalization.ViewModels
 {
