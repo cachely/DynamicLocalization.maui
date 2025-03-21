@@ -8,19 +8,7 @@ namespace DynamicLocalization
         public App()
         {   
         }
-
-        protected override void OnInitialized()
-        {
-            InitializeComponent();
-            NavigationService.NavigateAsync("MainPage");
-        }
-
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<AnotherPage, AnotherPageViewModel>();
-        }
-
+                
         protected override void OnStart()
         {
         }

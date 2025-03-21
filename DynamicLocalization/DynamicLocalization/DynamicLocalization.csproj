@@ -4,57 +4,21 @@
 	  <TargetFrameworks>net6.0-ios;net6.0-android</TargetFrameworks>
 	  <UseMaui>True</UseMaui>
 	  <OutputType>Library</OutputType>
-    <OutputType>Library</OutputType>
-   <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>enable</ImplicitUsings>
 
    <!-- Required for C# Hot Reload -->
    <UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 
-    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">15.4</SupportedOSPlatformVersion>
+  <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">15.4</SupportedOSPlatformVersion>
    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">31.0</SupportedOSPlatformVersion>
-
+   <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>portable</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Models\**" />
-    <EmbeddedResource Remove="Models\**" />
-    <None Remove="Models\**" />
-  </ItemGroup>
+ 
 
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.4" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Resources\en.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>en.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Resources\es.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>es.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\en.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>en.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
     <PackageReference Include="Xamarin.AndroidX.Browser">
       <Version>1.4.0.3</Version>

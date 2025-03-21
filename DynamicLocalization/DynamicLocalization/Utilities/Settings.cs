@@ -1,5 +1,4 @@
 ﻿using DynamicLocalization.Messages;
-using Xamarin.Forms;
 
 namespace DynamicLocalization.Utilities
 {
