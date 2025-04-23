@@ -22,24 +22,24 @@ namespace DynamicLocalization.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class es {
+    internal class AppResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal es() {
+        internal AppResources() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DynamicLocalization.Resources.es", typeof(es).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DynamicLocalization.Resources.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace DynamicLocalization.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,45 +61,45 @@ namespace DynamicLocalization.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Esta es una página que se muestra en inglés..
+        ///   Looks up a localized string similar to This is a page being displyed in english..
         /// </summary>
-        public static string Dialog {
+        internal static string Dialog {
             get {
                 return ResourceManager.GetString("Dialog", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Regresa.
+        ///   Looks up a localized string similar to Go Back.
         /// </summary>
-        public static string GoBack {
+        internal static string GoBack {
             get {
                 return ResourceManager.GetString("GoBack", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hola Mundo.
+        ///   Looks up a localized string similar to Hello World.
         /// </summary>
-        public static string Hello {
+        internal static string Hello {
             get {
                 return ResourceManager.GetString("Hello", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cambiar a inglés.
+        ///   Looks up a localized string similar to Switch to Spanish.
         /// </summary>
-        public static string Instructions {
+        internal static string Instructions {
             get {
                 return ResourceManager.GetString("Instructions", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Navegar a otra página.
+        ///   Looks up a localized string similar to Navigate to another page.
         /// </summary>
-        public static string Navigate {
+        internal static string Navigate {
             get {
                 return ResourceManager.GetString("Navigate", resourceCulture);
             }

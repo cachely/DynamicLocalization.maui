@@ -1,7 +1,7 @@
-﻿using System;
+﻿using DynamicLocalization.Resources;
+using System;
 using System.Diagnostics;
-using System.Reflection;
-using System.Resources;
+using System.Globalization;
 
 namespace DynamicLocalization.Utilities
 {
@@ -14,9 +14,8 @@ namespace DynamicLocalization.Utilities
 
             try
             {
-                //depending on how you handle your may have to reset your resource manager with each call.
-                var resMgr = new Lazy<ResourceManager>(() => new ResourceManager($"DynamicLocalization.Resources.{Settings.Culture}", typeof(DynamicLocalizer).GetTypeInfo().Assembly));
-                var value = resMgr.Value.GetString(text) ?? string.Empty;
+                var cultureInfo = new CultureInfo(Settings.Culture);
+                var value = AppResources.ResourceManager.GetString(text, cultureInfo) ?? string.Empty;
                 return value;
             }
             catch (Exception e)

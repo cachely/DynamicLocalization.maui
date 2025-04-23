@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<UseMaui>true</UseMaui>
+<<<<<<< HEAD
 		<TargetFramework>net6.0-ios</TargetFramework>
 		<OutputType>Exe</OutputType>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -8,10 +9,54 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>
 		
 	</PropertyGroup>
+=======
+		<TargetFramework>net7.0-ios</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">16.2</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+>>>>>>> d900c46c74128324bc811c776edf1d39314549b1
 	<ItemGroup>
 		<ProjectReference Include="..\DynamicLocalization\DynamicLocalization.csproj">
 			<Project>{3a3fdc90-3581-4258-ae40-4e802600922d}</Project>
 			<Name>DynamicLocalization</Name>
 		</ProjectReference>
 	</ItemGroup>
+<<<<<<< HEAD
+=======
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
+	</ItemGroup>
+	<PropertyGroup>
+		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>DynamicLocalization.iOS</RootNamespace>
+		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+		<AssemblyName>DynamicLocalization.iOS</AssemblyName>
+		<MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+		<MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+		<ProvisioningType>automatic</ProvisioningType>
+		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
+		<TargetFrameworks>net7.0-ios16.2</TargetFrameworks>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>portable</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>DEBUG</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<MtouchArch>x86_64</MtouchArch>
+		<MtouchLink>None</MtouchLink>
+		<MtouchDebug>true</MtouchDebug>
+	</PropertyGroup>
+>>>>>>> d900c46c74128324bc811c776edf1d39314549b1
 </Project>

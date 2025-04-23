@@ -8,7 +8,7 @@ namespace DynamicLocalization.Utilities
 
         internal static void FlipCulture()
         {
-            Culture = Culture.Equals("en") ? "es" : "en";
+            Culture = Culture.Contains("en") ? "es-MX" : "en-US";
             MessagingCenter.Send<object>(Application.Current, CultureChangedMessage.Message);
         }
     }
